@@ -1,0 +1,39 @@
+D: Go to the home menu and click on the first app available on the launcher
+adb shell input keyevent 3
+adb shell input tap 133 262
+D: Go to the home menu and long tap the first 3 apps available on the launcher
+adb shell input keyevent 3
+adb shell input swipe 133 262 133 262 700
+adb shell input tap 766 1935
+adb shell input swipe 341 282 341 282 700
+adb shell input tap 766 1935
+adb shell input swipe 523 282 523 282 700
+adb shell input tap 766 1935
+D: Verify the current battery percentage
+adb shell "dumpsys battery | grep level"
+D: Turn on bluetooth and accept permission for it
+adb shell am start -a android.bluetooth.adapter.action.REQUEST_ENABLE
+adb shell input tap 886 2174
+D: Launch the contacts app and add a new contact to the contact's list.
+adb shell monkey -p com.android.contacts -c android.intent.category.LAUNCHER 1
+adb shell am start -a android.intent.action.INSERT -t vnd.android.cursor.dir/contact -e name 'Juanito Perez' -e phone 123456789
+adb shell input tap 989 160
+D: Go to the home menu and click on the first app available on the launcher
+adb shell input keyevent 3
+adb shell input tap 133 262
+D: Go to the home menu and long tap the first 3 apps available on the launcher
+adb shell input keyevent 3
+adb shell input swipe 133 262 133 262 700
+adb shell input tap 766 1935
+adb shell input swipe 341 282 341 282 700
+adb shell input tap 766 1935
+adb shell input swipe 523 282 523 282 700
+adb shell input tap 766 1935
+D: Lower the device's volume
+adb shell media volume --show --stream 3 --set 8
+D: Activate the device's rotation lock.
+adb shell content insert --uri content://settings/system --bind name:s:accelerometer_rotation --bind value:i:0
+D: Launch the contacts app and add a new contact to the contact's list
+adb shell monkey -p com.android.contacts -c android.intent.category.LAUNCHER 1
+adb shell am start -a android.intent.action.INSERT -t vnd.android.cursor.dir/contact -e name 'Mariana Lopez' -e phone 93838377
+adb shell input tap 989 160
