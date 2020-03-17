@@ -3,9 +3,13 @@
 After executing the commands, it generates and HTML report with screenshots after every event execution. 
 The file commandList contains the commands to be executed per event:
 
+<hr>
+
 D: Description of event
-<List of ADB commands for event>
-  
+
+List of ADB commands for event
+
+<hr>
   Video demo for script:
   
   PC Screen: https://www.youtube.com/watch?v=oax7cV4cuKU&feature=youtu.be
